@@ -27,6 +27,7 @@ package JenkinsReport.TestReport;
 					logger = report.startTest("Test has been started");
 					System.setProperty("webdriver.chrome.driver", "C:/Users/psoodan/workspace/TestReport/drivers/chromedriver.exe");
 					driver = new ChromeDriver();
+				
 					logger.log(LogStatus.INFO, "Chrome browser open");
 					driver.get("https://ddakshi:Mpower@123@20.149.4.228/access/prd2/index.pl");  //http://username:password@url
 					logger.log(LogStatus.INFO, "User login");
@@ -37,8 +38,8 @@ package JenkinsReport.TestReport;
 			        Select AccountName = new Select(driver.findElement(By.xpath("html/body/table[1]/tbody/tr[3]/td/table/tbody/tr[1]/td[3]/select")));
 			        AccountName.selectByVisibleText("Green Cargo (GCO)");
 			        driver.findElement(By.xpath(".//*[@id='button']")).click();
-			        Select View = new Select(driver.findElement(By.xpath(".//*[@name='reportview']")));
-			        View.selectByVisibleText("Historical Events");
+			       // Select View = new Select(driver.findElement(By.name("reportview")));
+			        //View.selectByVisibleText("Historical Events");
 					
 					WebElement element=driver.findElement(By.name("columns"));
 					Select se=new Select(element);
